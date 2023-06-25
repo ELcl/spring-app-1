@@ -1,6 +1,7 @@
 package com.bolsadedeideas.springboot.web.app.controllers;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -31,8 +32,11 @@ public class IndexController {
 	 * @GetMapping({"/index", "/home", "/"})
 	 */
 	
-	@GetMapping("/index")
-	public String index() {
+	@GetMapping("/")
+	public String index(Model model) {
+		model.addAttribute("titulo", "Curso de Spring" );
+		model.addAttribute("encabezado", "Bienvenidos al curso de Spring!!!" );
+		model.addAttribute("descripcion", "Curso de Backend con Spring" );
 		return "index";
 	}
 	
