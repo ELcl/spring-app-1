@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
+@RequestMapping("app")
 public class IndexController {
 	// Si se omite el tipo de método es un GET
 	// Tambien se puede usar directamente
@@ -69,8 +70,5 @@ public class IndexController {
 		mv.addObject("descripcion", "Hola Spring con MapView");
 		mv.setViewName("index");
 		return mv;
-	}
-	
-	
-	
+	}	
 }
